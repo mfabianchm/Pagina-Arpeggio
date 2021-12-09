@@ -4,6 +4,29 @@ body {
 
 
 
+.kURitX {
+    box-shadow: rgb(0 0 0 / 10%) 0px 12px 24px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: opacity 0.3s ease 0s, margin 0.3s ease 0s, visibility 0.3s ease 0s;
+    background-color: rgb(255, 255, 255);
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    touch-action: auto;
+    margin-bottom: 76px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: auto;
+    margin-right: 20px;
+}
+
+
 /*Circles*/ 
 
 .circle-right-top-blue {
