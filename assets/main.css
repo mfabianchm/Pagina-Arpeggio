@@ -4137,9 +4137,7 @@ body {
 
 @media screen and (min-width: 901px) and (max-width: 1053px) {
 
-    .que-ofrecemos-main-container {
-        
-    }
+    
     
     .text-header-que-ofrecemos {
         font-size: 35px;
@@ -5440,9 +5438,7 @@ body {
       font-size: 40px;
   }
 
-  .text-educacion-musical-pricing {
-
-  }
+  
 
   .down-pricing-plans-container {
       display: flex;
@@ -5585,9 +5581,7 @@ body {
         font-size: 42px;
     }
   
-    .text-educacion-musical-pricing {
-  
-    }
+    
   
     .down-pricing-plans-container {
         display: flex;
@@ -8504,13 +8498,13 @@ body {
     }
 
 
-    @media screen and (min-width: 400px) and (max-width: 500px) {
+    @media screen and (min-width: 350px) and (max-width: 550px) {
         .caFLbO {
             display: inline-block;
             position: fixed;
             bottom: 0px;
             z-index: 9999999;
-            right: 30px;
+            right: 60px;
             left: auto;
         }
     }
