@@ -72,7 +72,7 @@ setTimeout(function(){
 
 
 
-}, 1000);
+}, 4000);
 
 
 
