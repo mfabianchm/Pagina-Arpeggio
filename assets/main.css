@@ -2003,6 +2003,7 @@ body {
     align-items: center;
     height: 900px;
     z-index: 4;
+    overflow: hidden;
 }
 
 .information-form-container {
