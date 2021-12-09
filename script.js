@@ -49,22 +49,23 @@ window.addEventListener('load', e => {
 setTimeout(function(){
     const buttonComoFunciona = document.querySelector('.button-como-funciona')
     const whatsAppFloatingWindowChat = document.querySelector('.Window__WindowComponent-sc-1wwhwms-1')
-    whatsAppFloatingWindowChat.style.transition = 'all 0.4s ease 0s'
 
     buttonComoFunciona.addEventListener('click', e => {
+        console.log(whatsAppFloatingWindowChat);
       const whatsMessage = document.querySelector('.WhatsappChat__Message-sc-1nhdht4-4')
-      whatsAppFloatingWindowChat.classList.remove('cVAvjx')
-      whatsAppFloatingWindowChat.classList.add('kURitX')
+      whatsAppFloatingWindowChat.classList.remove('ccKqxu')
+      whatsAppFloatingWindowChat.classList.add('kgJdyM')
       whatsMessage.style.opacity = '1'
-      console.log(whatsMessage);
+     console.log('hola');
         e.preventDefault()
 
-         if(whatsAppFloatingWindowChat.className = 'kURitx') {
+         if(whatsAppFloatingWindowChat.className = 'kgJdyM') {
              const closeXImage = document.querySelector('.Close__Component-sc-9nuxpx-0')
              
              closeXImage.addEventListener('click', e => {
-                whatsAppFloatingWindowChat.classList.remove('kURitX')
-                whatsAppFloatingWindowChat.classList.add('cVAvjx')
+                whatsAppFloatingWindowChat.classList.remove('kgJdyM')
+                whatsAppFloatingWindowChat.classList.add('ccKqxu')
+                console.log(whatsAppFloatingWindowChat);
              })
          }  
     })

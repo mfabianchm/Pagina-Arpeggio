@@ -4,7 +4,7 @@ body {
 
 
 
-.kURitX {
+/* .kgJdyM {
     box-shadow: rgb(0 0 0 / 10%) 0px 12px 24px 0px;
     display: flex;
     flex-direction: column;
@@ -21,19 +21,35 @@ body {
     margin-bottom: 76px;
     position: fixed;
     bottom: 0px;
-    right: 80px;
-    left: auto;
-    margin-right: 20px;
+    left: 0px;
+    right: auto;
+    margin-left: 20px;
 }
 
-.caFLbO {
-    display: inline-block;
+
+.ccKqxu {
+    box-shadow: rgb(0 0 0 / 10%) 0px 12px 24px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    touch-action: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease 0s, margin 0.3s ease 0s, visibility 0.3s ease 0s;
+    background-color: rgb(255, 255, 255);
+    transform: translate3d(0px, 0px, 0px);
+    margin-bottom: 60px;
     position: fixed;
     bottom: 0px;
-    z-index: 9999999;
-    right: 80px;
-    left: auto;
-}
+    left: 0px;
+    right: auto;
+    margin-left: 20px;
+} */
+
+
 
 
 
