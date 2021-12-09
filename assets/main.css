@@ -27,6 +27,8 @@ body {
 }
 
 
+
+
 /*Circles*/ 
 
 .circle-right-top-blue {
@@ -8500,6 +8502,22 @@ body {
             width: 40px;
         }
     }
+
+
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        .caFLbO {
+            display: inline-block;
+            position: fixed;
+            bottom: 0px;
+            z-index: 9999999;
+            right: 30px;
+            left: auto;
+        }
+    }
+
+
+
+    
 
 
         

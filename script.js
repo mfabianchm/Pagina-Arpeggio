@@ -66,10 +66,11 @@ setTimeout(function(){
                 whatsAppFloatingWindowChat.classList.remove('kURitX')
                 whatsAppFloatingWindowChat.classList.add('cVAvjx')
              })
-         }
-
-        
+         }  
     })
+
+
+
 }, 1000);
 
 
