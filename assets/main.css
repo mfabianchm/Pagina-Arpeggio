@@ -21,9 +21,18 @@ body {
     margin-bottom: 76px;
     position: fixed;
     bottom: 0px;
-    right: 0px;
+    right: 80px;
     left: auto;
     margin-right: 20px;
+}
+
+.caFLbO {
+    display: inline-block;
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999999;
+    right: 80px;
+    left: auto;
 }
 
 
@@ -8498,65 +8507,7 @@ body {
     }
 
 
-    @media screen and (min-width: 350px) and (max-width: 550px) {
-        .caFLbO {
-            display: inline-block;
-            position: fixed;
-            bottom: 0px;
-            z-index: 9999999;
-            right: auto;
-            left: 0;
-        }
-
-
-        .kURitX {
-            box-shadow: rgb(0 0 0 / 10%) 0px 12px 24px 0px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: opacity 0.3s ease 0s, margin 0.3s ease 0s, visibility 0.3s ease 0s;
-            background-color: rgb(255, 255, 255);
-            transform: translate3d(0px, 0px, 0px);
-            opacity: 1;
-            pointer-events: all;
-            visibility: visible;
-            touch-action: auto;
-            margin-bottom: 76px;
-            position: fixed;
-            bottom: 0px;
-            right: auto;
-            left: 0px;
-            margin-right: 20px;
-        }
-
-
-        .cVAvjx {
-            box-shadow: rgb(0 0 0 / 10%) 0px 12px 24px 0px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-            opacity: 0;
-            pointer-events: none;
-            touch-action: none;
-            visibility: hidden;
-            transition: opacity 0.3s ease 0s, margin 0.3s ease 0s, visibility 0.3s ease 0s;
-            background-color: rgb(255, 255, 255);
-            transform: translate3d(0px, 0px, 0px);
-            margin-bottom: 60px;
-            position: fixed;
-            bottom: 0px;
-            right: auto;
-            left: 0px;
-            margin-right: 20px;
-        }
-
-
-    }
-
+    
 
 
     
