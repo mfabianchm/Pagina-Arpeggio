@@ -6549,7 +6549,7 @@ body {
     }
  
     .answer {
-        font-size: 12px;
+        font-size: 13px;
         opacity: 0;
         position: absolute;
         left: 0;
@@ -8248,7 +8248,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 130px;
+            margin-top: 200px;
             padding-top: 50px;
         }
 
@@ -8297,7 +8297,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 130px;
+            margin-top: 200px;
             padding-top: 50px;
         }
 
