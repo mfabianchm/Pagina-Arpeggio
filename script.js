@@ -11,8 +11,11 @@ const hero = document.querySelector('.hero')
 const elementswithIdFadeInLoad = document.querySelectorAll('#fade-in-load')
 const circlesDesktopVersion = document.querySelectorAll('#circle-desktop')
 const circlesMobileVersion = document.querySelectorAll('#circle-hero')
+const heroContainer = document.querySelector('.hero')
+
 
 window.addEventListener('load', e => {
+
 
    elementswithIdFadeInLoad.forEach( function (element, index) {
     const NumberIndex = index

@@ -8,10 +8,12 @@ body {
 
 .circle-right-top-blue {
     position: absolute;
-    right: 0;
+    top: -30px;
+    right: -40px;
     z-index: -2;
     animation-delay: bounce-in-top 2s;
 }
+
 
 .circle-middle-yellow {
     position: absolute;
@@ -773,8 +775,8 @@ body {
     height: 800px;
     display: flex;
     align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0;
+    width: 100vw;
 }
 
 .hero-image-animation {
@@ -782,6 +784,7 @@ body {
     width: 50%;
     position: relative;
     bottom: 0px;
+    padding-right: 50px;
 }
 
 .hero-image-animation-on {
@@ -795,6 +798,7 @@ body {
     font-weight: 700;
     font-size: 50px;
     position: relative;
+    padding-left: 50px;
     bottom: 60px;
 }
 
@@ -1032,6 +1036,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 0px 30px 0px 30px;
+    overflow: hidden;
 }
 
 .descubre-arpeggio-left-container {
@@ -1885,7 +1890,8 @@ body {
     background-position-y: 130%;
     display: flex;
     align-items:center;
-    justify-content: space-around
+    justify-content: space-around;
+    overflow: hidden;
 }
 
 .image-left-faq {
@@ -2314,6 +2320,8 @@ body {
     position: relative;
     bottom: 30px;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .footer-logo-arpeggio {
@@ -2388,48 +2396,21 @@ body {
 @media screen and (min-width: 220px) and (max-width: 319px) {
 
     .circle-right-top-blue {
-        opacity: 0;
+        display: none;
     }
 
     .circle-middle-yellow {
-        opacity: 0;
+        display: none;
     }
 
     .circle-left-bottom-pink {
-        opacity: 0;
+        display: none;
     }
 
     .circle-left-top-blue {
-        opacity: 0;
+        display: none;
     }
 
-    /* Circles mobile */
-
-    .circle-blue-big-mobile, .circle-blue-bottom-mobile, .circle-yellow-mobile, .circle-pink-mobile {
-        position: absolute;
-        z-index: -2;
-        display: block;
-    }
-
-    .circle-blue-big-mobile {
-        top: 70px;
-        right: -160px;
-    }
-
-    .circle-blue-bottom-mobile {
-         top: 780px;
-    }
-
-    .circle-yellow-mobile {
-        top: 250px;
-        right: -120px;
-    }
-
-
-    .circle-pink-mobile {
-        top: 450px;
-        right: -200px;
-    }
 
     /* NAV SECTION */
 
@@ -2571,15 +2552,48 @@ body {
        height: 800px;
        position: relative;
        justify-content: space-around;
-       overflow: hidden;
+       width: 80%;
+       margin: 0;
+       padding-right: 0;
+    }
+
+
+    .circle-blue-big-mobile, .circle-blue-bottom-mobile, .circle-yellow-mobile, .circle-pink-mobile {
+        position: absolute;
+        z-index: -2;
+        display: inline-block;
+    }
+
+    .circle-blue-big-mobile {
+        top: 0;
+        right:-100px;
+    }
+
+    .circle-blue-bottom-mobile {
+         display: inline-block;
+         top: 650px;
+         right: 30px;
+    }
+
+    .circle-yellow-mobile {
+        display: inline-block;
+        top: 200px;
+        right: -20px;
+    }
+
+
+    .circle-pink-mobile {
+        display: inline-block;
+        top: 450px;
+        right: -140px;
     }
 
     .hero-text {
         height: 500px;
         position: relative;
-        width: 100%;
+        width: 80%;
         top: 0px;
-        left: -30px;
+        left: -40px;
     }
 
     .hero-text-aprende {
@@ -2604,6 +2618,7 @@ body {
         width: 230px;
         position: relative;
         bottom: 60px;
+        right: 20px;
     }
 }
 
@@ -2613,19 +2628,19 @@ body {
 
 
     .circle-right-top-blue {
-        opacity: 0;
+        display: none;
     }
 
     .circle-middle-yellow {
-        opacity: 0;
+        display: none;
     }
 
     .circle-left-bottom-pink {
-        opacity: 0;
+        display: none;
     }
 
     .circle-left-top-blue {
-        opacity: 0;
+        display: none;
     }
 
     /* Circles mobile */
@@ -2633,27 +2648,31 @@ body {
     .circle-blue-big-mobile, .circle-blue-bottom-mobile, .circle-yellow-mobile, .circle-pink-mobile {
         position: absolute;
         z-index: -2;
-        display: block;
+        display: inline-block;
     }
 
     .circle-blue-big-mobile {
-        top: 70px;
-        right: -130px;
+        top: 0;
+        right:-90px;
     }
 
     .circle-blue-bottom-mobile {
-         top: 850px;
+         display: inline-block;
+         top: 760px;
+         left: 0;
     }
 
     .circle-yellow-mobile {
-        top: 250px;
-        right: -100px;
+        display: inline-block;
+        top: 200px;
+        right: 0px;
     }
 
 
     .circle-pink-mobile {
-        top: 450px;
-        right: -200px;
+        display: inline-block;
+        top: 470px;
+        right: -110px;
     }
 
     /* NAV SECTION */
@@ -2797,6 +2816,9 @@ body {
        flex-direction: column;
        height: 1000px;
        position: relative;
+       margin: 0;
+       width: 100%;
+       padding: 0;
     }
 
     .hero-text {
@@ -2805,6 +2827,7 @@ body {
         width: 250px;
         top: 25px;
         align-self: flex-start;
+        padding-left: 40px;
     }
 
     .hero-text-aprende {
@@ -2837,23 +2860,27 @@ body {
 @media screen and (min-width: 475px) and (max-width: 666px) { 
 
     .circle-blue-big-mobile {
-        top: 70px;
-        left: 200px;
+        top: 0;
+        right:-90px;
     }
 
     .circle-blue-bottom-mobile {
-         top: 850px;
+         display: inline-block;
+         top: 760px;
+         left: 0;
     }
 
     .circle-yellow-mobile {
-        top: 250px;
-        left: 240px;
+        display: inline-block;
+        top: 200px;
+        right: 0px;
     }
 
 
     .circle-pink-mobile {
-        top: 450px;
-        left: 280px;
+        display: inline-block;
+        top: 470px;
+        right: -110px;
     }
 
     .hamburger-menu-img-before-click {
@@ -2886,8 +2913,8 @@ body {
     }
 
     .circle-blue-big-mobile {
-        top: 70px;
-        left: 280px;
+        top: 0px;
+        right: 70px;
     }
 
     .circle-blue-bottom-mobile {
@@ -2895,7 +2922,7 @@ body {
     }
 
     .circle-yellow-mobile {
-        top: 250px;
+        top: 200px;
         left: 350px;
     }
 
@@ -2942,6 +2969,10 @@ body {
       font-size: 14px;
   }
 
+  .hero {
+      padding: 0;
+  }
+
   .hero-button {
       left: 0;
       top: 20px;
@@ -2950,12 +2981,21 @@ body {
       padding: 20px;
   }
 
+  .hero-text {
+      padding-left: 50px;
+  }
+
   .hero-text-aprende {
       font-size: 40px;
   }
 
   .hero-text .hero-text-leyend {
       font-size: 15px;
+  }
+
+  .hero-image-animation {
+      width: 400px;
+      padding-right: 30px;
   }
 
   .circle-right-top-blue {
@@ -2969,8 +3009,6 @@ body {
     
   }
 
-  
-
   .circle-left-top-blue {
        left: 100px;
     }
@@ -2979,6 +3017,8 @@ body {
 }
 
 @media screen and (min-width: 1001px) and (max-width: 1308px) {
+
+        
     .circle-middle-yellow {
         top: 200px;
         left: 510px;
