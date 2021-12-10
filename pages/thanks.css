@@ -1,0 +1,166 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.thanks-container-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 70px;
+}
+
+.astronaut-thanks-image {
+    height: 600px;
+    width: 600px;
+}
+
+
+.circle-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-color: #fab8c4;
+    position: relative;
+    top: 50px;
+}
+
+.mensaje-enviado-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 40px;
+    color: #292930;
+}
+
+.exitosamente-span {
+    color:#5956E9;;
+}
+
+.nuestro-equipo-text {
+    font-family: 'DM Sans', sans-serif;
+    color: #999FAE;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.regresar-pagina-link, .regresar-pagina-text {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.regresar-pagina-text {
+    color: #292930;
+}
+
+.regresar-pagina-link {
+    color: #5956E9;
+}
+
+
+.regresar-pagina-link:hover {
+    color: #c75c6f;
+}
+
+
+@media screen and (min-width: 210px) and (max-width: 350px) {
+
+  body {
+      flex-direction: column;
+  }
+
+
+  .astronaut-thanks-image {
+    height: 300px;
+    width: 300px;
+}
+
+
+.circle-image {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+.thanks-container-text {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    padding-top: 50px;
+}
+
+
+.mensaje-enviado-text {
+    font-size: 28px;
+    text-align: center;
+}
+
+.nuestro-equipo-text {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+.regresar-pagina-text {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+}
+
+
+@media screen and (min-width: 351px) and (max-width: 850px) {
+
+    body {
+        flex-direction: column;
+    }
+  
+  
+    .astronaut-thanks-image {
+      height: 350px;
+      width: 350px;
+  }
+  
+  
+  .circle-image {
+      height: 250px;
+      width: 250px;
+      border-radius: 50%;
+  }
+  
+  
+  .thanks-container-text {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      align-items: center;
+      padding-top: 50px;
+  }
+  
+  
+  .mensaje-enviado-text {
+      font-size: 28px;
+      text-align: center;
+  }
+  
+  .nuestro-equipo-text {
+      font-size: 15px;
+      font-weight: 400;
+      text-align: center;
+  }
+  
+  
+  .regresar-pagina-text {
+      font-size: 14px;
+      text-align: center;
+  }
+  
+  
+  }
