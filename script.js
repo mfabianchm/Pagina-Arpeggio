@@ -1,9 +1,4 @@
-// const heroButton = document.querySelector('.hero-button')
-// const heroTextAprende = document.querySelector('.hero-text-aprende')
-// const heroTextLeyend = document.querySelector('.hero-text-leyend')
-// const heroimageAnimation = document.querySelector('.hero-image-animation')
-// const textsWithTextAnimation = document.querySelectorAll('.text-animation')
-// const logos = document.querySelectorAll('.logo-img-escuela')
+
 const hero = document.querySelector('.hero')
 
 // HERO-ANIMATIONS//

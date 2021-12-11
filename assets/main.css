@@ -133,6 +133,18 @@ body {
     opacity: 0;
 }
 
+#fade-in-load {
+    opacity: 0;
+}
+
+#circle-desktop {
+    opacity: 0;
+}
+
+#circle-hero {
+    opacity: 0;
+}
+
 /* ANIMATIONS */
 
 .fade-in-bottom {
@@ -222,6 +234,7 @@ body {
               transform: translateY(0);
       -webkit-animation-timing-function: ease-out;
               animation-timing-function: ease-out;
+              opacity: 1;
     }
   }
   @keyframes bounce-in-top {
@@ -274,6 +287,7 @@ body {
               transform: translateY(0);
       -webkit-animation-timing-function: ease-out;
               animation-timing-function: ease-out;
+              opacity: 1;
     }
   }
 
