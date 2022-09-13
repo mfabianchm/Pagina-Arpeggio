@@ -234,7 +234,6 @@ body {
               transform: translateY(0);
       -webkit-animation-timing-function: ease-out;
               animation-timing-function: ease-out;
-              opacity: 1;
     }
   }
   @keyframes bounce-in-top {
@@ -287,7 +286,6 @@ body {
               transform: translateY(0);
       -webkit-animation-timing-function: ease-out;
               animation-timing-function: ease-out;
-              opacity: 1;
     }
   }
 
@@ -2638,7 +2636,9 @@ body {
         width: 230px;
         position: relative;
         bottom: 60px;
-        right: 20px;
+        left: 30px;
+        right: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -2872,6 +2872,7 @@ body {
         width: 100%;
         position: relative;
         bottom: 200px;
+        padding-right: 0px;
     }
 }
 

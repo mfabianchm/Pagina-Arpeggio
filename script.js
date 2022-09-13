@@ -9,19 +9,23 @@ const circlesMobileVersion = document.querySelectorAll('#circle-hero')
 const heroContainer = document.querySelector('.hero')
 
 
-window.addEventListener('load', e => {
+
+
+window.addEventListener('DOMContentLoaded', e => {
 
 
    elementswithIdFadeInLoad.forEach( function (element, index) {
     const NumberIndex = index
     element.classList.add('fade-in-bottom')
     element.style.animationDelay = '150 ' * NumberIndex + 'ms'
+    element.style.opacity = '1'
 } )
 
     circlesDesktopVersion.forEach( function (circle, index) {
         const NumberIndex = index
         circle.classList.add('bounce-in-top')
         circle.style.animationDelay = '150 ' * NumberIndex + 'ms'
+        circle.style.opacity = '1'
     } )
 
 
@@ -29,6 +33,7 @@ window.addEventListener('load', e => {
         const NumberIndex = index
         circle.classList.add('bounce-in-fwd')
         circle.style.animationDelay = '150 ' * NumberIndex + 'ms'
+        circle.style.opacity = '1'
     } )
 
 })
@@ -584,8 +589,7 @@ const setSlidePosition = (slide, index) => {
 }
  slides.forEach(setSlidePosition);
 
-//  const nextButtonAfterResize = document.querySelector('.right-arrow')
-//  console.log(nextButtonAfterResize);
+
 
     
  
