@@ -1,6 +1,11 @@
 const hero = document.querySelector(".hero");
 
 import { applyAnimation } from "./modules/hero.js";
+import { startObservers } from "./modules/observers-animations.js";
+
+//start observers animations
+
+startObservers();
 
 // HERO-ANIMATIONS//
 
@@ -47,428 +52,6 @@ setTimeout(function () {
   });
 }, 4000);
 
-//Instersection observers Scroll Animations
-
-const elementswithFadeInId = document.querySelectorAll("#fade-in");
-
-const observerFadeInOptions = {
-  threshold: 0.5,
-};
-
-observerFadeIn = new IntersectionObserver((entries, observerFadeIn) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      entry.target.classList.add("fade-in-bottom");
-    }
-  });
-}, observerFadeInOptions);
-
-elementswithFadeInId.forEach((element) => {
-  observerFadeIn.observe(element);
-});
-
-const elementswithClassTiltBottom =
-  document.querySelectorAll("#tilt-in-bottom-2");
-const observerTiltBottomOptions = {
-  threshold: 0.5,
-};
-
-observerScrollTiltBottom = new IntersectionObserver(
-  (entries, observerScrollTiltBottom) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("tilt-in-bottom-2");
-      }
-    });
-  },
-  observerTiltBottomOptions
-);
-
-elementswithClassTiltBottom.forEach((element) => {
-  observerScrollTiltBottom.observe(element);
-});
-
-const imagesLogosEscuela = document.querySelectorAll(".logo-img");
-const elementswithScaleinCenterId =
-  document.querySelectorAll("#scale-in-center");
-const elementswithScaleICenterComoFuncionaId = document.querySelectorAll(
-  "#scale-in-center-como-funciona"
-);
-const elementswithScaleInCenterReviewsId = document.querySelectorAll(
-  "#scale-in-center-reviews"
-);
-
-const ScaleInCenterOptions = {
-  threshold: 0.5,
-};
-
-observerScaleInCenter = new IntersectionObserver(
-  (entries, observerScaleInCenter) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("scale-in-center");
-      }
-    });
-  },
-  ScaleInCenterOptions
-);
-
-imagesLogosEscuela.forEach((element) => {
-  observerScaleInCenter.observe(element);
-});
-
-elementswithScaleinCenterId.forEach((element) => {
-  observerScaleInCenter.observe(element);
-});
-
-elementswithScaleICenterComoFuncionaId.forEach(function (element, index) {
-  if (window.innerWidth > 644) {
-    const NumberIndex = index;
-    observerScaleInCenter.observe(element);
-    element.style.animationDelay = "100 " * NumberIndex + "ms";
-  } else observerScaleInCenter.observe(element);
-});
-
-elementswithScaleInCenterReviewsId.forEach(function (element, index) {
-  const NumberIndex = index;
-  observerScaleInCenter.observe(element);
-  element.style.animationDelay = "350 " * NumberIndex + "ms";
-});
-
-const elementsIdSlideBlurredBottom = document.querySelectorAll(
-  "#slide-in-blurred-bott"
-);
-
-const ScaleInBlurBottomOptions = {
-  threshold: 0.5,
-};
-
-observerScaleInBlurBottom = new IntersectionObserver(
-  (entries, observerScaleInBlurBottom) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("slide-in-blurred-bottom");
-      }
-    });
-  },
-  ScaleInBlurBottomOptions
-);
-
-elementsIdSlideBlurredBottom.forEach((element) => {
-  observerScaleInBlurBottom.observe(element);
-});
-
-const elementsIdSlideBlurredBottomContacto = document.querySelectorAll(
-  "#slide-in-blurred-bott-contacto"
-);
-
-const ScaleInBlurBottomContactoOptions = {
-  threshold: 0.1,
-};
-
-observerScaleInBlurBottomContacto = new IntersectionObserver(
-  (entries, observerScaleInBlurBottomContacto) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("slide-in-blurred-bottom");
-      }
-    });
-  },
-  ScaleInBlurBottomContactoOptions
-);
-
-elementsIdSlideBlurredBottomContacto.forEach((element) => {
-  observerScaleInBlurBottomContacto.observe(element);
-});
-
-const elementsIdSlideInRight = document.querySelectorAll("#slide-in-right01");
-
-const SlideInRightOptions = {
-  threshold: 0.5,
-};
-
-observerSlideInRight = new IntersectionObserver(
-  (entries, observerSlideInRight) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("slide-in-right");
-      }
-    });
-  },
-  SlideInRightOptions
-);
-
-elementsIdSlideInRight.forEach((element) => {
-  observerSlideInRight.observe(element);
-});
-
-//INTERSECTION OBSERVERS DESCUBRE SECTION
-
-if (window.innerWidth < 901) {
-  const elementsIdSlideInLeftDescubre = document.querySelectorAll(
-    "#slide-in-left-descubre"
-  );
-  const elementsIdSlideInRightDescubre = document.querySelectorAll(
-    "#slide-in-right-descubre"
-  );
-
-  const SlideInLeftDescubreOptions = {
-    threshold: 0.5,
-  };
-
-  const SlideInRightDescubreOptions = {
-    threshold: 0.5,
-  };
-
-  observerSlideInLeftDescubre = new IntersectionObserver(
-    (entries, observerSlideInLeftDescubre) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("slide-in-left");
-        }
-      });
-    },
-    SlideInLeftDescubreOptions
-  );
-
-  observerSlideInRightDescubre = new IntersectionObserver(
-    (entries, observerSlideInRightDescubre) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("slide-in-right");
-        }
-      });
-    },
-    SlideInRightDescubreOptions
-  );
-
-  elementsIdSlideInLeftDescubre.forEach((element) => {
-    observerSlideInLeftDescubre.observe(element);
-  });
-
-  elementsIdSlideInRightDescubre.forEach((element) => {
-    observerSlideInRightDescubre.observe(element);
-  });
-} else {
-  const featureQueOfrecemosContainer = document.querySelectorAll(
-    ".feature-que-ofrecemos-container"
-  );
-
-  const ScaleInCenterOptionsDescubre = {
-    threshold: 0.5,
-  };
-
-  observerScaleInCenterDescubre = new IntersectionObserver(
-    (entries, observerScaleInCenterDescubre) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("scale-in-center");
-        }
-      });
-    },
-    ScaleInCenterOptionsDescubre
-  );
-
-  featureQueOfrecemosContainer.forEach((element) => {
-    observerScaleInCenterDescubre.observe(element);
-  });
-}
-
-//INTERSECTION OBSERVERS CURSOS SECTION
-
-if (window.innerWidth < 768) {
-  const elementsIdSlideInLeftCursos = document.querySelectorAll(
-    "#slide-in-left-cursos"
-  );
-  const elementsIdSlideInRightCursos = document.querySelectorAll(
-    "#slide-in-right-cursos"
-  );
-
-  const SlideInLeftCursosOptions = {
-    threshold: 0.5,
-  };
-
-  const SlideInRightCursosOptions = {
-    threshold: 0.5,
-  };
-
-  observerSlideInLeftCursos = new IntersectionObserver(
-    (entries, observerSlideInLeftCursos) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("slide-in-left");
-        }
-      });
-    },
-    SlideInLeftCursosOptions
-  );
-
-  observerSlideInRightCursos = new IntersectionObserver(
-    (entries, observerSlideInRightCursos) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("slide-in-right");
-        }
-      });
-    },
-    SlideInRightCursosOptions
-  );
-
-  elementsIdSlideInLeftCursos.forEach((element) => {
-    observerSlideInLeftCursos.observe(element);
-  });
-
-  elementsIdSlideInRightCursos.forEach((element) => {
-    observerSlideInRightCursos.observe(element);
-  });
-} else {
-  const elementsIdSlideInLeftCursos = document.querySelectorAll(
-    "#slide-in-left-cursos"
-  );
-  const elementsIdSlideInRightCursos = document.querySelectorAll(
-    "#slide-in-right-cursos"
-  );
-
-  elementsIdSlideInRightCursos.forEach((element) => {
-    element.style.opacity = "1";
-  });
-
-  elementsIdSlideInLeftCursos.forEach((element) => {
-    element.style.opacity = "1";
-  });
-}
-
-const elementsIdTiltInBl = document.querySelectorAll("#tilt-in-bl");
-
-const TiltInBlOptions = {
-  threshold: 0.5,
-};
-
-observerTiltInBl = new IntersectionObserver((entries, observerTiltInBl) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      return;
-    } else {
-      entry.target.classList.add("tilt-in-bl");
-    }
-  });
-}, TiltInBlOptions);
-
-elementsIdTiltInBl.forEach((element) => {
-  observerTiltInBl.observe(element);
-});
-
-const elementsScaleBottomId = document.querySelectorAll("#scale-in-bottom");
-
-const ScaleInBottomOptions = {
-  threshold: 0.3,
-};
-
-observerScaleInBottom = new IntersectionObserver(
-  (entries, observerScaleInBottom) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("scale-in-bottom");
-      }
-    });
-  },
-  ScaleInBottomOptions
-);
-
-elementsScaleBottomId.forEach(function (element, index) {
-  if (window.innerWidth > 999) {
-    const NumberIndex = index;
-    observerScaleInBottom.observe(element);
-    element.style.animationDelay = "350 " * NumberIndex + "ms";
-  } else observerScaleInCenter.observe(element);
-});
-
-const elementsBounceInFwdIdFaq =
-  document.querySelectorAll("#bounce-in-fwd-faq");
-
-const BounceInFwdOptions = {
-  threshold: 0.5,
-};
-
-observerBounceInFwd = new IntersectionObserver(
-  (entries, observerBounceInFwd) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("bounce-in-fwd");
-      }
-    });
-  },
-  BounceInFwdOptions
-);
-
-elementsBounceInFwdIdFaq.forEach((element) => {
-  observerBounceInFwd.observe(element);
-});
-
-const elementsFadeInBottomFaqId = document.querySelectorAll(
-  "#fade-in-bottom-faq"
-);
-
-const FadeInBottomOptions = {
-  threshold: 0.5,
-};
-
-observerFadeInBottom = new IntersectionObserver(
-  (entries, observerFadeInBottom) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("fade-in-bottom");
-      }
-    });
-  },
-  FadeInBottomOptions
-);
-
-elementsFadeInBottomFaqId.forEach((element) => {
-  observerFadeInBottom.observe(element);
-});
-
-elementsFadeInBottomFaqId.forEach(function (element, index) {
-  const NumberIndex = index;
-  observerFadeInBottom.observe(element);
-  element.style.animationDelay = "200 " * NumberIndex + "ms";
-});
-
-window.addEventListener("load", (e) => {
-  const amountToSlidenavContainerMobile =
-    navContainerMobile.getBoundingClientRect().width;
-  navContainerMobile.style.transform =
-    "translateX(-" + amountToSlidenavContainerMobile + "px)";
-});
-
 //SCRIPT REVIEWS CAROUSEL
 
 const trackContainer = document.querySelector(".carousel-track-container");
@@ -494,10 +77,6 @@ const moveToSlide = (trackContainer, currentSlide, targetSlide) => {
 };
 
 //Evento para el boton de next carousel
-
-const windowSizeOnLoad = window.innerWidth;
-
-console.log(windowSizeOnLoad);
 
 nextButton.addEventListener("click", (e) => {
   const currentSlide = trackContainer.querySelector(".current-slide");
@@ -540,7 +119,7 @@ trackContainer.addEventListener("transitionend", () => {
 window.addEventListener("resize", (e) => {
   const currentSlide = trackContainer.querySelector(".current-slide");
   const sizeToMove = currentSlide.style.left;
-  sizeToMoveNumber = parseFloat(sizeToMove);
+  let sizeToMoveNumber = parseFloat(sizeToMove);
   const slideWidth = slides[0].getBoundingClientRect().width;
   trackContainer.style.transform = "translateX(" + -sizeToMoveNumber + "px)";
   const setSlidePosition = (slide, index) => {
@@ -627,6 +206,14 @@ window.addEventListener("resize", (e) => {
 //Seleccionar la img de hamburger before click
 //Seleccionar el nav menu before
 //Seleccionar hero
+
+window.addEventListener("load", (e) => {
+  const amountToSlidenavContainerMobile =
+    navContainerMobile.getBoundingClientRect().width;
+  navContainerMobile.style.transform =
+    "translateX(-" + amountToSlidenavContainerMobile + "px)";
+});
+
 const navMenuMobileBefore = document.querySelector(
   ".nav-menu-mobile-before-click"
 );

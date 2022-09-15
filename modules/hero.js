@@ -1,3 +1,5 @@
+//hero - animations
+
 export const applyAnimation = (arrayOfElements, className) => {
   arrayOfElements.forEach((element, index) => {
     element.classList.add(className);
