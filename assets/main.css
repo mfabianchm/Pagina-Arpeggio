@@ -2,10 +2,14 @@ body {
   margin: 0;
 }
 
-/* Arrow agendar clase*/
+/* Container para pedir información y agendar clases muestra*/
 
 .no-display {
   display: none;
+}
+
+.informes-button {
+  cursor: pointer;
 }
 
 .agendar-clase-main-container {

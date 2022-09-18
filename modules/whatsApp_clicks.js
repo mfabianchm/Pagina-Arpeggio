@@ -18,7 +18,10 @@ export const runClicksInformes = () => {
 
   const showInformesContainer = () => {
     click_informes_container.classList.remove("no-display");
-    click_informes_container.classList.add("agendar-clase-main-container");
+    click_informes_container.classList.add(
+      "agendar-clase-main-container",
+      "scale-in-center"
+    );
   };
 
   exitButton.addEventListener("click", removeInformesContainer);
