@@ -822,6 +822,12 @@ body {
   }
 }
 
+/*Ocultar imagenes y textos excedentes del ancho de la pantalla*/
+
+html {
+  overflow-x: hidden;
+}
+
 /* Barra de Navegacion*/
 
 .nav-container {
