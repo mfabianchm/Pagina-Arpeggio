@@ -931,6 +931,10 @@ html {
   overflow: hidden;
 }
 
+.circle-blue-big-mobile {
+  overflow: hidden;
+}
+
 .hero-image-animation {
   height: 500px;
   width: 50%;
