@@ -50,22 +50,22 @@ const moveToSlide = (trackContainer, currentSlide, targetSlide) => {
 
 //Evento para el boton de next carousel
 
-nextButton.addEventListener("click", (e) => {
+nextButton.addEventListener("click", () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
   const nextSlide = currentSlide.nextElementSibling;
   moveToSlide(trackContainer, currentSlide, nextSlide);
   counter++;
-  console.log(counter);
 });
 
 //Evento para el boton de previous
-prevButton.addEventListener("click", (e) => {
+prevButton.addEventListener("click", () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
   const nextSlide = currentSlide.previousElementSibling;
-  console.log(nextSlide);
   moveToSlide(trackContainer, currentSlide, nextSlide);
   counter--;
 });
+
+//Evento para reinciar el carousel
 
 trackContainer.addEventListener("transitionend", () => {
   if (slides[counter].id === "last-clone") {
@@ -88,7 +88,7 @@ trackContainer.addEventListener("transitionend", () => {
   }
 });
 
-window.addEventListener("resize", (e) => {
+window.addEventListener("resize", () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
   const sizeToMove = currentSlide.style.left;
   let sizeToMoveNumber = parseFloat(sizeToMove);
@@ -103,74 +103,24 @@ window.addEventListener("resize", (e) => {
 
 //SCRIPT PARA LA SECCION FAQ
 
+import {
+  addEventToPlusButtons,
+  addEventToMinusButtons,
+  resetFaqSection,
+} from "./modules/faq-section-events.js";
+
 const plusImage = document.querySelectorAll(".plus-image");
 const answers = document.querySelectorAll(".answer");
 const minusButtons = document.querySelectorAll(".minus-image");
-
-plusImage.forEach((image) => {
-  image.addEventListener("click", (e) => {
-    const questionContainer = image.closest(".question-itself-container");
-    const amountSlideDown = questionContainer.getBoundingClientRect().height;
-    const answer = questionContainer.querySelector(".answer");
-    const minusButton = questionContainer.querySelector(".minus-image");
-    image.style.display = "none";
-    minusButton.style.display = "inline-block";
-    questionContainer.style.transition = "height 350ms ease";
-    questionContainer.style.height = amountSlideDown * 2 + "px";
-    const heightAnswer = answer.getBoundingClientRect().height;
-    answer.style.transition = "opacity 1s ease, transform 350ms ease";
-    answer.style.opacity = "1";
-    answer.style.transform = "translateY(" + 20 + "px)"; //*******AQUI CAMBIAR LA ALTURA AUTOMATICA, SACAR ALTURA DEL ELEMENTO ANSWER */
-    e.stopPropagation;
-  });
-});
-
-minusButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const questionContainer = button.closest(".question-itself-container");
-    const amountSlideDown = questionContainer.getBoundingClientRect().height;
-    const answer = questionContainer.querySelector(".answer");
-    const plusButton = questionContainer.querySelector(".plus-image");
-    button.style.display = "none";
-    plusButton.style.display = "inline-block";
-    questionContainer.style.transition = "height 350ms ease";
-    questionContainer.style.height = amountSlideDown / 2 + "px";
-    answer.style.transition = "opacity 150ms ease, transform 350ms ease";
-    answer.style.opacity = "0";
-  });
-});
-
 const questionItselfContainer = document.querySelectorAll(
   ".question-itself-container"
 );
-window.addEventListener("resize", (e) => {
-  let windowWidthFaq = window.innerWidth;
-  answers.forEach((answer) => {
-    answer.style.opacity = "0";
-  });
-  if (minusButtons) {
-    minusButtons.forEach((button) => {
-      button.style.display = "none";
-      plusImage.forEach((button) => {
-        button.style.display = "inline-block";
-      });
-    });
-  }
-  if (window.innerWidth >= 210 && window.innerWidth <= 254) {
-    questionItselfContainer.forEach((element) => {
-      element.style.height = "85px";
-    });
-  }
-  if (window.innerWidth >= 255 && window.innerWidth <= 349) {
-    questionItselfContainer.forEach((element) => {
-      element.style.height = "80px";
-    });
-  }
-  if (window.innerWidth >= 350 && window.innerWidth <= 2000) {
-    questionItselfContainer.forEach((element) => {
-      element.style.height = "70px";
-    });
-  }
+
+addEventToPlusButtons(plusImage);
+addEventToMinusButtons(minusButtons);
+
+window.addEventListener("resize", () => {
+  resetFaqSection(answers, minusButtons, plusImage, questionItselfContainer);
 });
 
 //SCRIPT PARA EL MENU HAMBURGUESA DE NAV
