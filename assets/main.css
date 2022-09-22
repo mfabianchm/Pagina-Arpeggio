@@ -293,6 +293,42 @@ body {
   opacity: 0;
 }
 
+/* NAV MOBILE ANIMATIONS */
+
+.nav-mobile-animations {
+  transition: opacity 250ms ease;
+  opacity: 0;
+}
+
+.show-nav-mobile-container {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  width: 100%;
+  z-index: 2;
+  height: 800px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transition: transform 350ms ease;
+}
+
+.hide-nav-container-mobile {
+  transition: transform 350ms ease;
+  display: none;
+}
+
+.show-hero-mobile {
+  transition: transform 350ms ease;
+  opacity: 1;
+}
+
+.show-nav-menu-mobile-before {
+  transition: opacity 350ms ease, flex 250ms ease;
+  opacity: 1;
+  display: flex;
+}
+
 /* ANIMATIONS */
 
 .fade-in-bottom {

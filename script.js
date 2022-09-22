@@ -1,10 +1,7 @@
-const hero = document.querySelector(".hero");
-
+//start observers animations
 import { applyAnimation } from "./modules/hero.js";
 import { startObservers } from "./modules/observers-animations.js";
 import { runClicksInformes } from "./modules/whatsApp_clicks.js";
-
-//start observers animations
 
 startObservers();
 
@@ -19,6 +16,28 @@ window.addEventListener("DOMContentLoaded", (e) => {
   applyAnimation(circlesDesktopVersion, "bounce-in-top");
   applyAnimation(circlesMobileVersion, "bounce-in-fwd");
 });
+
+//Funcionalidad para mostrar y ocultar el menu nav versión mobile
+
+//Funciones de los eventos
+
+import {
+  onClickEvent_MenuHamburguerBefore,
+  closeNavMobileSection,
+} from "./modules/nav-mobile-functions.js";
+
+const buttonMenuHamburgerBefore = document.querySelector(
+  ".hamburger-menu-img-before-click"
+);
+const navContainerMobile = document.querySelector(".nav-container-mobile");
+const buttonCloseMenu = navContainerMobile.querySelector(".hamburger-menu-img");
+
+buttonMenuHamburgerBefore.addEventListener(
+  "click",
+  onClickEvent_MenuHamburguerBefore
+);
+
+buttonCloseMenu.addEventListener("click", closeNavMobileSection);
 
 //Funcionalidad para mostrar y ocultar container de informes
 
@@ -121,67 +140,4 @@ addEventToMinusButtons(minusButtons);
 
 window.addEventListener("resize", () => {
   resetFaqSection(answers, minusButtons, plusImage, questionItselfContainer);
-});
-
-//SCRIPT PARA EL MENU HAMBURGUESA DE NAV
-
-//Seleccionar la img de hamburger before click
-//Seleccionar el nav menu before
-//Seleccionar hero
-
-window.addEventListener("load", (e) => {
-  const amountToSlidenavContainerMobile =
-    navContainerMobile.getBoundingClientRect().width;
-  navContainerMobile.style.transform =
-    "translateX(-" + amountToSlidenavContainerMobile + "px)";
-});
-
-const navMenuMobileBefore = document.querySelector(
-  ".nav-menu-mobile-before-click"
-);
-const buttonMenuHamburgerBefore = document.querySelector(
-  ".hamburger-menu-img-before-click"
-);
-const navContainerMobile = document.querySelector(".nav-container-mobile");
-const buttonCloseMenu = navContainerMobile.querySelector(".hamburger-menu-img");
-const circlesHero = document.querySelectorAll("#circle-hero");
-
-buttonMenuHamburgerBefore.addEventListener("click", (e) => {
-  navMenuMobileBefore.style.transition = "opacity 250ms";
-  navMenuMobileBefore.style.opacity = "0";
-  circlesHero.forEach((circle) => {
-    circle.style.transition = "opacity 250ms ease";
-    circle.style.opacity = "0";
-  });
-  hero.style.transition = "opacity 250ms ease";
-  hero.style.opacity = "0";
-  navContainerMobile.style.opacity = "1";
-  navContainerMobile.style.display = "flex";
-  navContainerMobile.style.flexDirection = "column";
-  navContainerMobile.style.width = "100%";
-  navContainerMobile.style.zIndex = "2";
-  const amountToSlidenavContainerMobile =
-    navContainerMobile.getBoundingClientRect().width;
-  navContainerMobile.style.right = amountToSlidenavContainerMobile + "px";
-  navContainerMobile.style.transition = "transform 350ms ease";
-  navContainerMobile.style.transform =
-    "translateX(" + amountToSlidenavContainerMobile + "px)";
-});
-
-buttonCloseMenu.addEventListener("click", (e) => {
-  const amountToSlidenavContainerMobile =
-    navContainerMobile.getBoundingClientRect().width;
-  navContainerMobile.style.transition = "transform 350ms ease,";
-  navContainerMobile.style.transform =
-    "translateX(-" + amountToSlidenavContainerMobile + "px)";
-  navContainerMobile.style.display = "none";
-  hero.style.transition = "opacity 350ms ease";
-  hero.style.opacity = "1";
-  circlesHero.forEach((circle) => {
-    circle.style.transition = "opacity 350ms ease";
-    circle.style.opacity = "1";
-  });
-  navMenuMobileBefore.style.transition = "opacity 350ms ease, flex 250ms ease";
-  navMenuMobileBefore.style.opacity = "1";
-  navMenuMobileBefore.style.display = "flex";
 });
