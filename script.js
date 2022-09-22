@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
 });
 
 //Funcionalidad para mostrar y ocultar el menu nav versión mobile
-
 //Funciones de los eventos
 
 import {
@@ -45,6 +44,8 @@ runClicksInformes();
 
 //SCRIPT REVIEWS CAROUSEL
 
+import { setSlidePosition, moveToSlide } from "./modules/reviews-functions.js";
+
 const trackContainer = document.querySelector(".carousel-track-container");
 const slides = Array.from(trackContainer.children); //seleccione los review-container
 const nextButton = document.querySelector(".right-arrow");
@@ -53,19 +54,7 @@ const slideWidth = slides[0].getBoundingClientRect().width; //esto es para sacar
 let counter = 1;
 trackContainer.style.transform = "translateX(" + -slideWidth * counter + "px)";
 
-const setSlidePosition = (slide, index) => {
-  slide.style.left = slideWidth * index + "px";
-};
 slides.forEach(setSlidePosition);
-
-//Funcion para mover el carousel
-const moveToSlide = (trackContainer, currentSlide, targetSlide) => {
-  trackContainer.style.transition = "transform 350ms ease";
-  trackContainer.style.transform =
-    "translateX(-" + targetSlide.style.left + ")";
-  currentSlide.classList.remove("current-slide");
-  targetSlide.classList.add("current-slide");
-};
 
 //Evento para el boton de next carousel
 
@@ -84,9 +73,13 @@ prevButton.addEventListener("click", () => {
   counter--;
 });
 
+trackContainer.addEventListener("transitionend", () => {
+  goToLastSlide();
+});
+
 //Evento para reinciar el carousel
 
-trackContainer.addEventListener("transitionend", () => {
+const goToLastSlide = () => {
   if (slides[counter].id === "last-clone") {
     const slideWidth = slides[0].getBoundingClientRect().width;
     trackContainer.style.transition = "none";
@@ -105,14 +98,13 @@ trackContainer.addEventListener("transitionend", () => {
     slides[4].classList.remove("current-slide");
     slides[1].classList.add("current-slide");
   }
-});
+};
 
 window.addEventListener("resize", () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
-  const sizeToMove = currentSlide.style.left;
-  let sizeToMoveNumber = parseFloat(sizeToMove);
+  const sizeToMove = parseFloat(currentSlide.style.left);
   const slideWidth = slides[0].getBoundingClientRect().width;
-  trackContainer.style.transform = "translateX(" + -sizeToMoveNumber + "px)";
+  trackContainer.style.transform = "translateX(" + -sizeToMove + "px)";
   const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + "px";
   };
