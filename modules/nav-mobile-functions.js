@@ -1,10 +1,5 @@
 const hero = document.querySelector(".hero");
-const buttonMenuHamburgerBefore = document.querySelector(
-  ".hamburger-menu-img-before-click"
-);
 const navContainerMobile = document.querySelector(".nav-container-mobile");
-const buttonCloseMenu = navContainerMobile.querySelector(".hamburger-menu-img");
-
 //nav de hasta arriba antes del click en el hero
 const navMenuMobileBefore = document.querySelector(
   ".nav-menu-mobile-before-click"
