@@ -3,6 +3,8 @@ import { applyAnimation } from "./modules/hero.js";
 import { startObservers } from "./modules/observers-animations.js";
 import { runClicksInformes } from "./modules/whatsApp_clicks.js";
 
+//Funcion para iniciar las animaciones
+
 startObservers();
 
 // HERO-ANIMATIONS//
@@ -44,13 +46,17 @@ runClicksInformes();
 
 //SCRIPT REVIEWS CAROUSEL
 
-import { setSlidePosition, moveToSlide } from "./modules/reviews-functions.js";
+import {
+  setSlidePosition,
+  moveToSlide,
+  resetCarousel,
+} from "./modules/reviews-functions.js";
 
 const trackContainer = document.querySelector(".carousel-track-container");
-const slides = Array.from(trackContainer.children); //seleccione los review-container
+const slides = Array.from(trackContainer.children);
 const nextButton = document.querySelector(".right-arrow");
 const prevButton = document.querySelector(".left-arrow");
-const slideWidth = slides[0].getBoundingClientRect().width; //esto es para sacar el width de cada review-container
+const slideWidth = slides[0].getBoundingClientRect().width;
 let counter = 1;
 trackContainer.style.transform = "translateX(" + -slideWidth * counter + "px)";
 
@@ -65,8 +71,8 @@ nextButton.addEventListener("click", () => {
   counter++;
 });
 
-//Evento para el boton de previous
-prevButton.addEventListener("click", () => {
+//Evento para el boton de previous carousel
+prevButton.addEventListener("click", async () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
   const nextSlide = currentSlide.previousElementSibling;
   moveToSlide(trackContainer, currentSlide, nextSlide);
@@ -74,31 +80,15 @@ prevButton.addEventListener("click", () => {
 });
 
 trackContainer.addEventListener("transitionend", () => {
-  goToLastSlide();
+  //Evento para reiniciar el carousel
+  resetCarousel(counter, slides, trackContainer);
+  if (counter == 5) {
+    counter = 1;
+  }
+  if (counter == 0) {
+    counter = 4;
+  }
 });
-
-//Evento para reinciar el carousel
-
-const goToLastSlide = () => {
-  if (slides[counter].id === "last-clone") {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    trackContainer.style.transition = "none";
-    counter = slides.length - 2;
-    trackContainer.style.transform =
-      "translateX(" + -slideWidth * counter + "px)";
-    slides[0].classList.remove("current-slide");
-    slides[4].classList.add("current-slide");
-  }
-  if (slides[counter].id === "first-clone") {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    trackContainer.style.transition = "none";
-    counter = slides.length - counter;
-    trackContainer.style.transform =
-      "translateX(" + -slideWidth * counter + "px)";
-    slides[4].classList.remove("current-slide");
-    slides[1].classList.add("current-slide");
-  }
-};
 
 window.addEventListener("resize", () => {
   const currentSlide = trackContainer.querySelector(".current-slide");
